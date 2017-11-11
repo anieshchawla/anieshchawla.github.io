@@ -88,6 +88,9 @@ $$\sum_i\sum_k W_iW_k$$. A good value to start with for regularisation strength 
 4. Many more based on the model you are using for eg. KNN has K as hyper parameter, etc.
 
 
+#### Common commands in Jekyll for Mac:
+1. bundle exec jekyll serve
+2. open $(bundle show minima) -  if your theme is minima -  check config.yml file for it.
 
 
 <!-- You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.

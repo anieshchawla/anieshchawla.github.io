@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-11-11T12:10:24-05:00</updated><id>http://localhost:4000/</id><title type="html">My Experiments with Machine Learning</title><subtitle>I started ML this year because of my interest and I wanted to share my experience with people who have been trying to work in this field. This is also a repository for me to revise concepts which I might forget.</subtitle><entry><title type="html">Starting Terms ML</title><link href="http://localhost:4000/jekyll/update/2017/11/11/important-terms.html" rel="alternate" type="text/html" title="Starting Terms ML" /><published>2017-11-11T00:08:12-05:00</published><updated>2017-11-11T00:08:12-05:00</updated><id>http://localhost:4000/jekyll/update/2017/11/11/important-terms</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2017/11/11/important-terms.html">&lt;p&gt;We will start with some very common terms that have find it use in ML&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-11-11T12:26:28-05:00</updated><id>http://localhost:4000/</id><title type="html">My Experiments with Machine Learning</title><subtitle>I started ML this year because of my interest and I wanted to share my experience with people who have been trying to work in this field. This is also a repository for me to revise concepts which I might forget.</subtitle><entry><title type="html">Starting Terms ML</title><link href="http://localhost:4000/jekyll/update/2017/11/11/important-terms.html" rel="alternate" type="text/html" title="Starting Terms ML" /><published>2017-11-11T00:08:12-05:00</published><updated>2017-11-11T00:08:12-05:00</updated><id>http://localhost:4000/jekyll/update/2017/11/11/important-terms</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2017/11/11/important-terms.html">&lt;p&gt;We will start with some very common terms that have find it use in ML&lt;/p&gt;
 
 &lt;h3 id=&quot;loss-functions-&quot;&gt;Loss functions :&lt;/h3&gt;
 &lt;p&gt;This is finally what you would expect to be low. There are many loss functions that are used:&lt;/p&gt;
@@ -83,6 +83,12 @@ complex. Generally we use L2 regularization
   &lt;/li&gt;
   &lt;li&gt;Number of Iterations - this is also hyper parameter as it depends on how long do you want to run your model.&lt;/li&gt;
   &lt;li&gt;Many more based on the model you are using for eg. KNN has K as hyper parameter, etc.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;common-commands-in-jekyll-for-mac&quot;&gt;Common commands in Jekyll for Mac:&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;bundle exec jekyll serve&lt;/li&gt;
+  &lt;li&gt;open $(bundle show minima) -  if your theme is minima -  check config.yml file for it.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;!-- You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.

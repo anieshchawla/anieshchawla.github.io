@@ -4,6 +4,13 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-Loss functions :	/Users/kavyagarg/Downloads/Purdue_docs/Machine-Learning/anieshchawla.github.io/_posts/2017-11-11-important-terms.markdown	/^### Loss functions :$/;"	function	line:9
-Hyper parameters:	/Users/kavyagarg/Downloads/Purdue_docs/Machine-Learning/anieshchawla.github.io/_posts/2017-11-11-important-terms.markdown	/^### Hyper parameters:$/;"	function	line:63
-=> prints 'Hi, Tom' to STDOUT.	/Users/kavyagarg/Downloads/Purdue_docs/Machine-Learning/anieshchawla.github.io/_posts/2017-11-11-important-terms.markdown	/^#=> prints 'Hi, Tom' to STDOUT.$/;"	function	line:104
+title	/Users/kavyagarg/Downloads/Purdue_docs/Machine-Learning/anieshchawla.github.io/_config.yml	/^title: My Experiments with Machine Learning$/;"	function	line:16
+email	/Users/kavyagarg/Downloads/Purdue_docs/Machine-Learning/anieshchawla.github.io/_config.yml	/^email: chawla9@purdue.edu$/;"	function	line:17
+description	/Users/kavyagarg/Downloads/Purdue_docs/Machine-Learning/anieshchawla.github.io/_config.yml	/^description: >- # this means to ignore newlines until "baseurl:"$/;"	function	line:18
+baseurl	/Users/kavyagarg/Downloads/Purdue_docs/Machine-Learning/anieshchawla.github.io/_config.yml	/^baseurl: "" # the subpath of your site, e.g. \/blog$/;"	function	line:21
+url	/Users/kavyagarg/Downloads/Purdue_docs/Machine-Learning/anieshchawla.github.io/_config.yml	/^url: "" # the base hostname & protocol for your site, e.g. http:\/\/example.com$/;"	function	line:22
+twitter_username	/Users/kavyagarg/Downloads/Purdue_docs/Machine-Learning/anieshchawla.github.io/_config.yml	/^twitter_username: aniesh_chawla$/;"	function	line:23
+github_username	/Users/kavyagarg/Downloads/Purdue_docs/Machine-Learning/anieshchawla.github.io/_config.yml	/^github_username:  anieshchawla$/;"	function	line:24
+markdown	/Users/kavyagarg/Downloads/Purdue_docs/Machine-Learning/anieshchawla.github.io/_config.yml	/^markdown: kramdown$/;"	function	line:27
+theme	/Users/kavyagarg/Downloads/Purdue_docs/Machine-Learning/anieshchawla.github.io/_config.yml	/^theme: minima$/;"	function	line:28
+plugins	/Users/kavyagarg/Downloads/Purdue_docs/Machine-Learning/anieshchawla.github.io/_config.yml	/^plugins:$/;"	function	line:29

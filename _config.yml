@@ -24,7 +24,7 @@ twitter_username: aniesh_chawla
 github_username:  anieshchawla
 
 # Build settings
-markdown: redcarpet
+markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
