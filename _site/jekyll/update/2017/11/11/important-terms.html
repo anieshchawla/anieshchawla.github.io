@@ -167,6 +167,15 @@ complex. Generally we use L2 regularization
   <li>Many more based on the model you are using for eg. KNN has K as hyper parameter, etc.</li>
 </ol>
 
+<h3 id="cross-validation">Cross Validation</h3>
+<p>This technique is used to remove overfitting in the learning algorithm. The training dataset is randomly partitioned in k-folds. One fold is chosen at random and other data is use for training. The algorithm is made to learn on the randomly chosen dataset and is validated on validation data set. This is performed k times.</p>
+
+<p>There are two ways to go about now.</p>
+<ol>
+  <li>You can either select average of all the output of the k trials</li>
+  <li>You can penalise those models which tries to overfit (better result on training dataset and bad result on validation dataset)</li>
+</ol>
+
 <h4 id="common-commands-in-jekyll-for-mac">Common commands in Jekyll for Mac:</h4>
 <ol>
   <li>bundle exec jekyll serve</li>
@@ -197,6 +206,10 @@ Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most ou
   <script type="text/javascript"
     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
   </script>
+
+  
+    
+
 
   
 </article>

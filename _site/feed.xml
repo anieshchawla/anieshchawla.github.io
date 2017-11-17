@@ -1,4 +1,111 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-11-11T12:26:28-05:00</updated><id>http://localhost:4000/</id><title type="html">My Experiments with Machine Learning</title><subtitle>I started ML this year because of my interest and I wanted to share my experience with people who have been trying to work in this field. This is also a repository for me to revise concepts which I might forget.</subtitle><entry><title type="html">Starting Terms ML</title><link href="http://localhost:4000/jekyll/update/2017/11/11/important-terms.html" rel="alternate" type="text/html" title="Starting Terms ML" /><published>2017-11-11T00:08:12-05:00</published><updated>2017-11-11T00:08:12-05:00</updated><id>http://localhost:4000/jekyll/update/2017/11/11/important-terms</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2017/11/11/important-terms.html">&lt;p&gt;We will start with some very common terms that have find it use in ML&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-11-17T11:18:20-05:00</updated><id>http://localhost:4000/</id><title type="html">My Experiments with Machine Learning</title><subtitle>I started ML this year because of my interest and I wanted to share my experience with people who have been trying to work in this field. This is also a repository for me to revise concepts which I might forget.</subtitle><entry><title type="html">Decision Trees</title><link href="http://localhost:4000/jekyll/update/2017/11/14/decision-trees.html" rel="alternate" type="text/html" title="Decision Trees" /><published>2017-11-14T00:15:12-05:00</published><updated>2017-11-14T00:15:12-05:00</updated><id>http://localhost:4000/jekyll/update/2017/11/14/decision-trees</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2017/11/14/decision-trees.html">&lt;p&gt;One of the most basic algorithm which is easier to understand yet very powerful is Decision Trees. There are two most popular algorithm associated with training the Decision Trees are :&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;C4.5, ID3&lt;/li&gt;
+  &lt;li&gt;CART&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;c45&quot;&gt;C4.5&lt;/h3&gt;
+&lt;p&gt;This was developed by Quinlan and is extension of its earlier algorithm ID3. Consider Samples of data s1,s2, ….., sn. Each sample is k-length vector - which means that each sample is represted by k -columns or k variables.&lt;/p&gt;
+
+&lt;p&gt;At each node C4.5 chooses the best attribute on which it can be split. The splitting criterion is information gain, which means that whichever attribute gives the largest information gain after splitting, that would be chosen. First, we should what is gain.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;Gain(S,A) = H(S) - \sum_{a\subset A} \frac{|a|}{|S|} * H(a)&lt;/script&gt;
+
+&lt;p&gt;where H is entropy, S is sample and A is the attribute chosen.
+Entropy is given by :&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;H(P) = \sum_i-p_i*log_{2}(p_i)&lt;/script&gt;
+
+&lt;p&gt;Let’s take an example to make it more clear. The table below shows, age, income and whether that person buys a certain thing or not.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{array}{|c|c|c|}
+\hline
+Age &amp; Income &amp; Buys \\ \hline
+&lt;30&amp; high &amp; yes \\ \hline
+&gt;30&amp; medium &amp; yes \\ \hline
+&gt;30&amp; low &amp; no \\ \hline
+&gt;30&amp; high &amp; no \\ \hline
+&lt;30&amp; high &amp; yes \\ \hline
+&lt;30&amp; medium &amp; yes \\ \hline
+&gt;30&amp; high &amp; no \\ \hline
+&lt;30&amp; low &amp; yes \\ \hline
+&lt;30&amp; low &amp; yes \\ \hline
+ \hline
+\end{array} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;1st we find the information stored in this table:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+ H[buys]&amp; = -(probability of yes)* log_2(probability of yes) + -(probability of no)* log_2(probability of no) \\
+&amp; = -6/9 * log_2(6/9) - 3/9*log_2(3/9) \\
+&amp; = 0.91829
+  \end {align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Lets consider now that we split based on income. So we have three categories - low(3), medium(2) and high(4).&lt;/p&gt;
+
+&lt;p&gt;So Entropy associated with this attribute is as follows:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;For high (2 yes and 2 no) : -2/4 log 2/4 -2/4 log 2/4 = 1&lt;/li&gt;
+  &lt;li&gt;For medium (two yes) : -2/2 * log 2/2 = 0&lt;/li&gt;
+  &lt;li&gt;For low (2 yes and 1 no) : -1/3 log (1/3) - 2/3 log(2/3) = 0.9182&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Therefore, we can now find the gain as follows:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+Gain &amp; = 0.91829 - (4/9 * (1) + 2/9 * 0 + 3/9 * 0.9182)\\
+  &amp; = 0.167
+  \end {align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Similarly, the information gain for splitting on age attribute is = 0.5577. As we can see that the information gain is more in case of age, thus it will first choose to split via age attribute. Intuitively, this makes sense, if you see the table again, for age &amp;lt; 30 the person is buying the product.&lt;/p&gt;
+
+&lt;h3 id=&quot;cart&quot;&gt;CART&lt;/h3&gt;
+
+&lt;p&gt;This is similar to C4.5 but uses Gini index instead of entropy for gain. Gini index is defined as :&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;Gini(X) = 1 - \sum_x p(x)^2&lt;/script&gt;
+
+&lt;p&gt;And there Gain is defined in this case as :&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;Gain(S,A) = Gini(S) - \sum_{a\subset A} \frac{|a|}{|S|} * Gini(a)&lt;/script&gt;
+
+&lt;h3 id=&quot;when-should-we-stop-growing-the-tree&quot;&gt;When Should we stop growing the Tree?&lt;/h3&gt;
+&lt;p&gt;We should be vary of the depth of the decision tree that we are making. More depth generally means that we are overfitting the data. There are two basic ways to avoid overfitting in Decision Trees:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Pre - Pruning - as the name suggests, we start making decision trees only after making some initial decisions. It can have two major criteria :
+    &lt;ul&gt;
+      &lt;li&gt;Depth -  which means that we define the maximum depth till which we will allow tree to grow&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Pre defined Conditions - which means, we will make certain conditions and can make our decision trees grow to certain depth till that condition is reached on the leaf node - Following are couple of examples of such pruning conditions:
+        &lt;ul&gt;
+          &lt;li&gt;if all attribute value on the leaf node are same&lt;/li&gt;
+          &lt;li&gt;number of attributes in the leaf node are x (where x &amp;lt; total attributes provided initially)&lt;/li&gt;
+          &lt;li&gt;attributes reaches certain threshold values&lt;/li&gt;
+          &lt;li&gt;Chi-square feature is not statistically significant&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Post - Pruning - This is pruning mechanism in a bottoms-up approach.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;C4.5 and CART both uses different pruning mechanism to remove overfitting. C4.5 uses “Reduce Error Pruning” whereas CART uses “Cross validation for selecting Gini Threshold”&lt;/p&gt;
+
+&lt;h3 id=&quot;reduce-error-pruning&quot;&gt;Reduce Error Pruning&lt;/h3&gt;
+&lt;p&gt;In this mechanism, We start pruning in an bottom’s up approach in the following fashion:
+Let T be subtree whose root node is v. We define gain from pruning as :&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;Gain(pruning) = \#misclassification_T - misclassification_v&lt;/script&gt;
+
+&lt;p&gt;If this gain is +ve, it means that there were fewer misclassification when we started with and have more misclassification in the subtree T. Thus we will start removing those nodes which have Gain +ve and thereby keeping only -ve pruning gain nodes.&lt;/p&gt;
+
+&lt;h3 id=&quot;cross-validation-for-selecting-gini-threshold&quot;&gt;Cross validation for selecting Gini Threshold&lt;/h3&gt;
+
+&lt;p&gt;For cross validation technique you can look at &lt;a href=&quot;http://localhost:4000//jekyll/update/2017/11/11/important-terms.html&quot;&gt;my previous post&lt;/a&gt;. This is pre-pruning mechanism with condition testing. In this method, for each validation test set, define a Gini threshold &lt;script type=&quot;math/tex&quot;&gt;G_t&lt;/script&gt; for the decision tree. This means that whenever the leaf node reaches Gini index at &lt;script type=&quot;math/tex&quot;&gt;G_t&lt;/script&gt;, you should stop. The best &lt;script type=&quot;math/tex&quot;&gt;G_t&lt;/script&gt; is chosen from these validation sets and is finally used during testing.&lt;/p&gt;</content><author><name></name></author><summary type="html">One of the most basic algorithm which is easier to understand yet very powerful is Decision Trees. There are two most popular algorithm associated with training the Decision Trees are : C4.5, ID3 CART</summary></entry><entry><title type="html">Starting Terms ML</title><link href="http://localhost:4000/jekyll/update/2017/11/11/important-terms.html" rel="alternate" type="text/html" title="Starting Terms ML" /><published>2017-11-11T00:08:12-05:00</published><updated>2017-11-11T00:08:12-05:00</updated><id>http://localhost:4000/jekyll/update/2017/11/11/important-terms</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2017/11/11/important-terms.html">&lt;p&gt;We will start with some very common terms that have find it use in ML&lt;/p&gt;
 
 &lt;h3 id=&quot;loss-functions-&quot;&gt;Loss functions :&lt;/h3&gt;
 &lt;p&gt;This is finally what you would expect to be low. There are many loss functions that are used:&lt;/p&gt;
@@ -83,6 +190,15 @@ complex. Generally we use L2 regularization
   &lt;/li&gt;
   &lt;li&gt;Number of Iterations - this is also hyper parameter as it depends on how long do you want to run your model.&lt;/li&gt;
   &lt;li&gt;Many more based on the model you are using for eg. KNN has K as hyper parameter, etc.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;cross-validation&quot;&gt;Cross Validation&lt;/h3&gt;
+&lt;p&gt;This technique is used to remove overfitting in the learning algorithm. The training dataset is randomly partitioned in k-folds. One fold is chosen at random and other data is use for training. The algorithm is made to learn on the randomly chosen dataset and is validated on validation data set. This is performed k times.&lt;/p&gt;
+
+&lt;p&gt;There are two ways to go about now.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;You can either select average of all the output of the k trials&lt;/li&gt;
+  &lt;li&gt;You can penalise those models which tries to overfit (better result on training dataset and bad result on validation dataset)&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h4 id=&quot;common-commands-in-jekyll-for-mac&quot;&gt;Common commands in Jekyll for Mac:&lt;/h4&gt;

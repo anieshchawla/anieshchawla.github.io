@@ -1,10 +1,11 @@
 ---
 layout: page
 title: About
+comments: true
 permalink: /about/
 ---
 
-I am MS at Purdue, Pursuing Computer Engineering. I am working with [Prof. Yung Hsian Lu](https://engineering.purdue.edu/HELPS/Faculty/yunglu.html) and [Dr. Ebert](https://engineering.purdue.edu/~ebertd/).
+I am pursuing MS in Computer Engineering from Purdue. I am working with [Prof. Yung Hsian Lu](https://engineering.purdue.edu/HELPS/Faculty/yunglu.html) and [Dr. Ebert](https://engineering.purdue.edu/~ebertd/).
 
 My interest in ML started when I was in my last company (Sanctum Networks in India). We were collecting lot of network traffic data for Liberty Global by using NETCONF protocol. I was responsible for architecting and coding scalable client and servers for collecting data. I leveraged Apache Storm and Kafka to scale it.
 Since the code has to be in C/C++, I created [Storm wrapper](https://github.com/anieshchawla/StormWrapperCpp) for C++ and shared with the community.

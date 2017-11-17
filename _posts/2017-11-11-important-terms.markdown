@@ -88,6 +88,13 @@ $$\sum_i\sum_k W_iW_k$$. A good value to start with for regularisation strength 
 4. Many more based on the model you are using for eg. KNN has K as hyper parameter, etc.
 
 
+### Cross Validation
+This technique is used to remove overfitting in the learning algorithm. The training dataset is randomly partitioned in k-folds. One fold is chosen at random and other data is use for training. The algorithm is made to learn on the randomly chosen dataset and is validated on validation data set. This is performed k times.
+
+There are two ways to go about now.
+1. You can either select average of all the output of the k trials
+2. You can penalise those models which tries to overfit (better result on training dataset and bad result on validation dataset)
+
 #### Common commands in Jekyll for Mac:
 1. bundle exec jekyll serve
 2. open $(bundle show minima) -  if your theme is minima -  check config.yml file for it.
