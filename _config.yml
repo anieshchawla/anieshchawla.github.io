@@ -19,7 +19,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   I started ML this year because of my interest and I wanted to share my experience with people who have been
   trying to work in this field. This is also a repository for me to revise concepts which I might forget.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://anieshchawla.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: aniesh_chawla
 github_username:  anieshchawla
 
