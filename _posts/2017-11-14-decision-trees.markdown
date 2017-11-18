@@ -3,6 +3,7 @@ layout: post
 title:  "Decision Trees"
 date:   2017-11-14 00:15:12 -0500
 categories: jekyll update
+mathjax: true
 ---
 
 One of the most basic algorithm which is easier to understand yet very powerful is Decision Trees. There are two most popular algorithm associated with training the Decision Trees are :
