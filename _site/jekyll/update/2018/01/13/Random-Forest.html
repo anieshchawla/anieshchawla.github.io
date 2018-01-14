@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>My Experiments with Machine Learning</title>
-  <meta name="description" content="I started ML this year because of my interest and I wanted to share my experience with people who have been trying to work in this field. This is also a repo...">
+  <title>Random Forest</title>
+  <meta name="description" content="This algorithm belong the category of supervised learning algorithms. This in a very crude way be considered as ensemble classifier for the Decision Trees. J...">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="canonical" href="http://localhost:4000/jekyll/update/2018/01/13/Random-Forest.html">
   <!-- <link rel="alternate" type="application/rss+xml" title="My Experiments with Machine Learning" href="/feed.xml"> -->
   <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   <script>
@@ -91,47 +91,52 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <h1 class="page-heading">Posts</h1>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Random Forest</h1>
+    <p class="post-meta">
+      <time datetime="2018-01-13T00:15:12-05:00" itemprop="datePublished">
+        
+        Jan 13, 2018
+      </time>
+      </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>This algorithm belong the category of <strong>supervised learning</strong> algorithms. This in a very crude way be considered as ensemble classifier for the Decision Trees. Just like Decision Trees, this algorithm can be used both for classification as well as regression. Please read about <a href="http://localhost:4000//jekyll/update/2017/11/14/decision-trees.html">Decision Trees</a> before we get on to Random Forest.</p>
+
+<h3 id="random-forest">Random Forest</h3>
+<p>As the name suggests, this is a forest i.e. group of many decision trees. The <code class="highlighter-rouge">Random</code> in  Random Forest is the random selection of parameters at each node, we will see in a while what does it mean. Random Forest is a very powerful algorithm. When I was working in American Express in fraud analytics team, we shifted our focus from building traditional Linear Regression model to building models using this algorithm. We also used this  for fraud classification and building rules.</p>
+
+<h3 id="algorithm">Algorithm</h3>
+<p>The algorithm is very simple. But first we will assume the following:</p>
+<ul>
+  <li>The depth of decision tree used in Random Forest is a hyper parameter.</li>
+  <li>Each data point has k parameters in total</li>
+  <li>There are N Decision Trees that we expect in this algorithm. This is also a hyper parameter.</li>
+</ul>
+
+<p>The algorithm is as follows:</p>
+<ol>
+  <li>Select m parameters out of k parameters, where m « k.</li>
+  <li>Select the best parameter out of these <code class="highlighter-rouge">m</code> to get the best split at each node. The best split selection is in the same way as in <a href="http://localhost:4000//jekyll/update/2017/11/14/decision-trees.html">Decision Trees</a>.</li>
+  <li>Continue the process from 1-2 till you reach the depth of decision tree.</li>
+  <li>Do 1-3 for each Decision Tree in Random Forest.</li>
+  <li>Select the most frequent outcome of all the Trees.</li>
+</ol>
+
+<h2 id="other-benefits">Other Benefits</h2>
+<p>After the algorithm is complete. You can also rank order the number of parameter which appeared during the split based on the times they are used for finding the best split. When I was working in fraud analytics team in American Express, we often used the parameters that came in rank order to create rules for finding frauds. We directly couldn’t use the results from Random Forest because we had to justify the parameters used for creating rule not only to the senior leaders but also to the auditing firms.</p>
+
+  </div>
 
   
-
-
-  <ul class="post-list">
     
-      <li>
-        
-        <span class="post-meta">Jan 13, 2018</span>
 
-        <h2>
-          <a class="post-link" href="/jekyll/update/2018/01/13/Random-Forest.html">Random Forest</a>
-        </h2>
-      </li>
-    
-      <li>
-        
-        <span class="post-meta">Nov 14, 2017</span>
 
-        <h2>
-          <a class="post-link" href="/jekyll/update/2017/11/14/decision-trees.html">Decision Trees</a>
-        </h2>
-      </li>
-    
-      <li>
-        
-        <span class="post-meta">Nov 11, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/jekyll/update/2017/11/11/important-terms.html">Starting Terms ML</a>
-        </h2>
-      </li>
-    
-  </ul>
-
-  <!-- <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p> -->
-
-</div>
+  
+</article>
 
       </div>
     </main>

@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="/assets/main.css">
   <link rel="canonical" href="http://localhost:4000/jekyll/update/2017/11/14/decision-trees.html">
   <!-- <link rel="alternate" type="application/rss+xml" title="My Experiments with Machine Learning" href="/feed.xml"> -->
-  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   <script>
           MathJax.Hub.Config({
               config: ["MMLorHTML.js"],
@@ -111,9 +111,9 @@
 </ol>
 
 <h3 id="c45">C4.5</h3>
-<p>This was developed by Quinlan and is extension of its earlier algorithm ID3. Consider Samples of data s1,s2, ….., sn. Each sample is k-length vector - which means that each sample is represted by k -columns or k variables.</p>
+<p>This was developed by Quinlan and is extension of its earlier algorithm ID3. Consider Samples of data s1,s2, ….., sn. Each sample is k-length vector - which means that each sample is represented by k -columns or k variables.</p>
 
-<p>At each node C4.5 chooses the best attribute on which it can be split. The splitting criterion is information gain, which means that whichever attribute gives the largest information gain after splitting, that would be chosen. First, we should what is gain.</p>
+<p>At each node C4.5 chooses the best attribute on which it can be split. The splitting criterion is information gain, which means that whichever attribute gives the largest information gain after splitting, that would be chosen. First, we should understand what is gain.</p>
 
 <script type="math/tex; mode=display">Gain(S,A) = H(S) - \sum_{a\subset A} \frac{|a|}{|S|} * H(a)</script>
 
@@ -151,7 +151,7 @@ Age & Income & Buys \\ \hline
 
 <p>Lets consider now that we split based on income. So we have three categories - low(3), medium(2) and high(4).</p>
 
-<p>So Entropy associated with this attribute is as follows:</p>
+<p>So Entropy associated with income attribute is as follows:</p>
 <ol>
   <li>For high (2 yes and 2 no) : -2/4 log 2/4 -2/4 log 2/4 = 1</li>
   <li>For medium (two yes) : -2/2 * log 2/2 = 0</li>
@@ -166,7 +166,7 @@ Gain & = 0.91829 - (4/9 * (1) + 2/9 * 0 + 3/9 * 0.9182)\\
   & = 0.167
   \end {align} %]]></script>
 
-<p>Similarly, the information gain for splitting on age attribute is = 0.5577. As we can see that the information gain is more in case of age, thus it will first choose to split via age attribute. Intuitively, this makes sense, if you see the table again, for age &lt; 30 the person is buying the product.</p>
+<p>Similarly, the information gain for splitting on age attribute is = 0.8091. As we can see that the information gain is more in case of age, thus it will first choose to split via age attribute. Intuitively, this makes sense, if you see the table again, for age &lt; 30 the person is buying the product.</p>
 
 <h3 id="cart">CART</h3>
 
@@ -174,7 +174,7 @@ Gain & = 0.91829 - (4/9 * (1) + 2/9 * 0 + 3/9 * 0.9182)\\
 
 <script type="math/tex; mode=display">Gini(X) = 1 - \sum_x p(x)^2</script>
 
-<p>And there Gain is defined in this case as :</p>
+<p>And Gain is defined as :</p>
 
 <script type="math/tex; mode=display">Gain(S,A) = Gini(S) - \sum_{a\subset A} \frac{|a|}{|S|} * Gini(a)</script>
 

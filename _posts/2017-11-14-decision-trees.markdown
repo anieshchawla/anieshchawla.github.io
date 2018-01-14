@@ -11,9 +11,9 @@ One of the most basic algorithm which is easier to understand yet very powerful 
 2. CART
 
 ### C4.5
-This was developed by Quinlan and is extension of its earlier algorithm ID3. Consider Samples of data s1,s2, ....., sn. Each sample is k-length vector - which means that each sample is represted by k -columns or k variables.
+This was developed by Quinlan and is extension of its earlier algorithm ID3. Consider Samples of data s1,s2, ....., sn. Each sample is k-length vector - which means that each sample is represented by k -columns or k variables.
 
-At each node C4.5 chooses the best attribute on which it can be split. The splitting criterion is information gain, which means that whichever attribute gives the largest information gain after splitting, that would be chosen. First, we should what is gain.
+At each node C4.5 chooses the best attribute on which it can be split. The splitting criterion is information gain, which means that whichever attribute gives the largest information gain after splitting, that would be chosen. First, we should understand what is gain.
 
 $$Gain(S,A) = H(S) - \sum_{a\subset A} \frac{|a|}{|S|} * H(a)$$
 
@@ -52,7 +52,7 @@ $$
 
 Lets consider now that we split based on income. So we have three categories - low(3), medium(2) and high(4).
 
-So Entropy associated with this attribute is as follows:
+So Entropy associated with income attribute is as follows:
 1. For high (2 yes and 2 no) : -2/4 log 2/4 -2/4 log 2/4 = 1
 2. For medium (two yes) : -2/2 * log 2/2 = 0
 3. For low (2 yes and 1 no) : -1/3 log (1/3) - 2/3 log(2/3) = 0.9182
@@ -65,7 +65,7 @@ Gain & = 0.91829 - (4/9 * (1) + 2/9 * 0 + 3/9 * 0.9182)\\
   \end {align}
  $$
 
- Similarly, the information gain for splitting on age attribute is = 0.5577. As we can see that the information gain is more in case of age, thus it will first choose to split via age attribute. Intuitively, this makes sense, if you see the table again, for age < 30 the person is buying the product.
+ Similarly, the information gain for splitting on age attribute is = 0.8091. As we can see that the information gain is more in case of age, thus it will first choose to split via age attribute. Intuitively, this makes sense, if you see the table again, for age < 30 the person is buying the product.
 
 ### CART
 
@@ -75,7 +75,7 @@ $$
 Gini(X) = 1 - \sum_x p(x)^2
 $$
 
-And there Gain is defined in this case as :
+And Gain is defined as :
 
 $$
 Gain(S,A) = Gini(S) - \sum_{a\subset A} \frac{|a|}{|S|} * Gini(a)
