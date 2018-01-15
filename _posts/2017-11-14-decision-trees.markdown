@@ -75,7 +75,7 @@ $$
 Gini(X) = 1 - \sum_x p(x)^2
 $$
 
-And Gain is defined as :
+And Gain for using a particular attribute `A` is defined as :
 
 $$
 Gain(S,A) = Gini(S) - \sum_{a\subset A} \frac{|a|}{|S|} * Gini(a)

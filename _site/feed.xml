@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-01-13T19:42:46-05:00</updated><id>http://localhost:4000/</id><title type="html">My Experiments with Machine Learning</title><subtitle>I started ML this year because of my interest and I wanted to share my experience with people who have been trying to work in this field. This is also a repository for me to revise concepts which I might forget.</subtitle><entry><title type="html">Random Forest</title><link href="http://localhost:4000/jekyll/update/2018/01/13/Random-Forest.html" rel="alternate" type="text/html" title="Random Forest" /><published>2018-01-13T00:15:12-05:00</published><updated>2018-01-13T00:15:12-05:00</updated><id>http://localhost:4000/jekyll/update/2018/01/13/Random-Forest</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2018/01/13/Random-Forest.html">&lt;p&gt;This algorithm belong the category of &lt;strong&gt;supervised learning&lt;/strong&gt; algorithms. This in a very crude way be considered as ensemble classifier for the Decision Trees. Just like Decision Trees, this algorithm can be used both for classification as well as regression. Please read about &lt;a href=&quot;http://localhost:4000//jekyll/update/2017/11/14/decision-trees.html&quot;&gt;Decision Trees&lt;/a&gt; before we get on to Random Forest.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-01-14T22:24:21-05:00</updated><id>http://localhost:4000/</id><title type="html">My Experiments with Machine Learning</title><subtitle>I started ML this year because of my interest and I wanted to share my experience with people who have been trying to work in this field. This is also a repository for me to revise concepts which I might forget.</subtitle><entry><title type="html">Random Forest</title><link href="http://localhost:4000/jekyll/update/2018/01/13/Random-Forest.html" rel="alternate" type="text/html" title="Random Forest" /><published>2018-01-13T00:15:12-05:00</published><updated>2018-01-13T00:15:12-05:00</updated><id>http://localhost:4000/jekyll/update/2018/01/13/Random-Forest</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2018/01/13/Random-Forest.html">&lt;p&gt;This algorithm belong the category of &lt;strong&gt;supervised learning&lt;/strong&gt; algorithms. This in a very crude way be considered as ensemble classifier for the Decision Trees. Just like Decision Trees, this algorithm can be used both for classification as well as regression. Please read about &lt;a href=&quot;http://localhost:4000//jekyll/update/2017/11/14/decision-trees.html&quot;&gt;Decision Trees&lt;/a&gt; before we get on to Random Forest.&lt;/p&gt;
 
 &lt;h3 id=&quot;random-forest&quot;&gt;Random Forest&lt;/h3&gt;
 &lt;p&gt;As the name suggests, this is a forest i.e. group of many decision trees. The &lt;code class=&quot;highlighter-rouge&quot;&gt;Random&lt;/code&gt; in  Random Forest is the random selection of parameters at each node, we will see in a while what does it mean. Random Forest is a very powerful algorithm. When I was working in American Express in fraud analytics team, we shifted our focus from building traditional Linear Regression model to building models using this algorithm. We also used this  for fraud classification and building rules.&lt;/p&gt;
@@ -21,7 +21,41 @@
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;other-benefits&quot;&gt;Other Benefits&lt;/h2&gt;
-&lt;p&gt;After the algorithm is complete. You can also rank order the number of parameter which appeared during the split based on the times they are used for finding the best split. When I was working in fraud analytics team in American Express, we often used the parameters that came in rank order to create rules for finding frauds. We directly couldn’t use the results from Random Forest because we had to justify the parameters used for creating rule not only to the senior leaders but also to the auditing firms.&lt;/p&gt;</content><author><name></name></author><summary type="html">This algorithm belong the category of supervised learning algorithms. This in a very crude way be considered as ensemble classifier for the Decision Trees. Just like Decision Trees, this algorithm can be used both for classification as well as regression. Please read about Decision Trees before we get on to Random Forest.</summary></entry><entry><title type="html">Decision Trees</title><link href="http://localhost:4000/jekyll/update/2017/11/14/decision-trees.html" rel="alternate" type="text/html" title="Decision Trees" /><published>2017-11-14T00:15:12-05:00</published><updated>2017-11-14T00:15:12-05:00</updated><id>http://localhost:4000/jekyll/update/2017/11/14/decision-trees</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2017/11/14/decision-trees.html">&lt;p&gt;One of the most basic algorithm which is easier to understand yet very powerful is Decision Trees. There are two most popular algorithm associated with training the Decision Trees are :&lt;/p&gt;
+&lt;p&gt;After the algorithm is complete. You can also rank order the number of parameter which appeared during the split based on the times they are used for finding the best split. When I was working in fraud analytics team in American Express, we often used the parameters that came in rank order to create rules for finding frauds. We directly couldn’t use the results from Random Forest because we had to justify the parameters used for creating rule not only to the senior leaders but also to the auditing firms.&lt;/p&gt;
+
+&lt;h2 id=&quot;implementation-in-python&quot;&gt;Implementation in python&lt;/h2&gt;
+&lt;p&gt;Implementation of this algorithm is very simple in python. We will not be reinventing the wheel again and will use the algorithms already present in various open source libraries. In this case we will be using pandas and scikit learn packages of python. Please see the implementation below:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pandas&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sklearn.model_selection&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;train_test_split&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sklearn.ensemble&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RandomForestClassifier&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sklearn.metrics&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;accuracy_score&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sklearn.metrics&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;confusion_matrix&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#Lets suppose dataset is complete without any missing data. In my dataset that I have removed the rows which had missing entries.&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;dataset&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read_csv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CSV_FILE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#features: These are the columns which have the variables for the dataset&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#target: This column is what we want as our output&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#percentageSplit: this is the percentage we want our dataset to be split into train and test - I chose 67%&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;train_x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;train_y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;train_test_split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dataset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;features&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dataset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;train_size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;percentageSplit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#initialize a classifier&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;rf_classfier&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RandomForestClassifier&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#train the classifier with our data set&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;rf_classfier&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;train_x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;train_y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#predict the output with the trained model&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;predict&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rf_classf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;predict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#now we will see the result using accuracy_score&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Train Accuracy: &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;accuracy_score&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;train_y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rf_classf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;predict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;train_x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Test Accuracy: &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;accuracy_score&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;predict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#confusion matrix can also be found using the following command&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Confusion Matrix: &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;confusion_matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;predict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">This algorithm belong the category of supervised learning algorithms. This in a very crude way be considered as ensemble classifier for the Decision Trees. Just like Decision Trees, this algorithm can be used both for classification as well as regression. Please read about Decision Trees before we get on to Random Forest.</summary></entry><entry><title type="html">Decision Trees</title><link href="http://localhost:4000/jekyll/update/2017/11/14/decision-trees.html" rel="alternate" type="text/html" title="Decision Trees" /><published>2017-11-14T00:15:12-05:00</published><updated>2017-11-14T00:15:12-05:00</updated><id>http://localhost:4000/jekyll/update/2017/11/14/decision-trees</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2017/11/14/decision-trees.html">&lt;p&gt;One of the most basic algorithm which is easier to understand yet very powerful is Decision Trees. There are two most popular algorithm associated with training the Decision Trees are :&lt;/p&gt;
 &lt;ol&gt;
   &lt;li&gt;C4.5, ID3&lt;/li&gt;
   &lt;li&gt;CART&lt;/li&gt;
@@ -91,7 +125,7 @@ Gain &amp; = 0.91829 - (4/9 * (1) + 2/9 * 0 + 3/9 * 0.9182)\\
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;Gini(X) = 1 - \sum_x p(x)^2&lt;/script&gt;
 
-&lt;p&gt;And Gain is defined as :&lt;/p&gt;
+&lt;p&gt;And Gain for using a particular attribute &lt;code class=&quot;highlighter-rouge&quot;&gt;A&lt;/code&gt; is defined as :&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;Gain(S,A) = Gini(S) - \sum_{a\subset A} \frac{|a|}{|S|} * Gini(a)&lt;/script&gt;
 
@@ -220,9 +254,34 @@ complex. Generally we use L2 regularization
 
 &lt;p&gt;There are two ways to go after cross validation:&lt;/p&gt;
 &lt;ol&gt;
-  &lt;li&gt;You can either select average of all the output of the k trials&lt;/li&gt;
+  &lt;li&gt;You can either select average of all the output of the &lt;code class=&quot;highlighter-rouge&quot;&gt;k&lt;/code&gt; trials&lt;/li&gt;
   &lt;li&gt;You can penalise those models which tries to overfit (better result on training dataset and bad result on validation dataset)&lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;h3 id=&quot;performance&quot;&gt;Performance&lt;/h3&gt;
+&lt;p&gt;Performance of any machine learning algorithm generally uses terms like &lt;code class=&quot;highlighter-rouge&quot;&gt;confusion matrix&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;precision&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;recall&lt;/code&gt;, etc. We will understand their meaning by taking a simple example. Lets suppose our algorithm predicts whether a particular credit card transaction is fraud or not. We ran our algorithm on 20 transactions, out of which it predicted 4 being as fraud and 16 as not fraud. Out of the 4 transactions predicted, only 3 were actually fraud. We know what there were total of 6 fraud transactions and 14 regular transactions.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{array}{|c|c|c|}
+\hline
+ n=&amp; Predicted &amp; Predicted \\
+ 20&amp; Fraud(4) &amp; \text{Not Fraud(16)} \\ \hline
+\text{Actual Fraud(6)}&amp; 3 &amp; 3 \\ \hline
+\text{Actual Not Fraud(14)} &amp; 1 &amp; 13 \\ \hline
+ \hline
+\end{array} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Now we will define our those terms:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Confusion Matrix&lt;/strong&gt; : The matrix shown above is the confusion matrix. This is the main performance matrix for classification algorithms.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Precision&lt;/strong&gt;: As the name suggests, it tells how precise is the algorithm. In our case it is ratio of (actual fraud in predicted)/ (total fraud predicted) i.e 3/4. In technical terms it is ratio of true positives to total predicted. That is why Precision is also called positive predictive value.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Recall&lt;/strong&gt;: This term tell us about the sensitivity of prediction. It tell us about how much was the algorithm actually able to predict properly. In our case it is ratio of (actual fraud in predicted)/(total fraud in transactions) i.e. 3/6 = 1/2. Technically, it is ratio of true positives to all positive&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;True Positive Rate&lt;/strong&gt;: When it is fraud, how often does the algorithm predict a transaction to be fraud. In our example, it is 3/6.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;False Negative Rate&lt;/strong&gt;: When it is not fraud, how often does the algorithm predict a transaction to be fraud. In our example, it is 1/13.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Accuracy&lt;/strong&gt;: This tells us, how accurate our algorithm is. In our case it is (3+13)/20 = 80%.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Misclassification Rate&lt;/strong&gt;: This is opposite of Accuracy i.e. missclass_rate = 1 - accuracy = 20%.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Prevalance&lt;/strong&gt;: It tells us the whether our data is sparse or not for classification. In our example it is percentage of transaction that are fraud in dataset i.e. 6/20 = 30%.&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h4 id=&quot;common-commands-in-jekyll-for-mac&quot;&gt;Common commands in Jekyll for Mac:&lt;/h4&gt;
 &lt;ol&gt;

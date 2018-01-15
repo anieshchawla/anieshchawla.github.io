@@ -92,8 +92,35 @@ $$\sum_i\sum_k W_iW_k$$. A good value to start with for regularisation strength 
 This technique is used to remove overfitting in the learning algorithm. The training dataset is randomly partitioned in k-folds. One fold is chosen at random and other data is use for training. The algorithm is made to learn on the randomly chosen dataset and is validated on validation data set. This is performed k times.
 
 There are two ways to go after cross validation:
-1. You can either select average of all the output of the k trials
+1. You can either select average of all the output of the `k` trials
 2. You can penalise those models which tries to overfit (better result on training dataset and bad result on validation dataset)
+
+### Performance
+Performance of any machine learning algorithm generally uses terms like `confusion matrix`, `precision`, `recall`, etc. We will understand their meaning by taking a simple example. Lets suppose our algorithm predicts whether a particular credit card transaction is fraud or not. We ran our algorithm on 20 transactions, out of which it predicted 4 being as fraud and 16 as not fraud. Out of the 4 transactions predicted, only 3 were actually fraud. We know what there were total of 6 fraud transactions and 14 regular transactions.
+
+$$
+\begin{array}{|c|c|c|}
+\hline
+ n=& Predicted & Predicted \\
+ 20& Fraud(4) & \text{Not Fraud(16)} \\ \hline
+\text{Actual Fraud(6)}& 3 & 3 \\ \hline
+\text{Actual Not Fraud(14)} & 1 & 13 \\ \hline
+ \hline
+\end{array}
+$$
+
+Now we will define our those terms:
+* **Confusion Matrix** : The matrix shown above is the confusion matrix. This is the main performance matrix for classification algorithms.
+* **Precision**: As the name suggests, it tells how precise is the algorithm. In our case it is ratio of (actual fraud in predicted)/ (total fraud predicted) i.e 3/4. In technical terms it is ratio of true positives to total predicted. That is why Precision is also called positive predictive value.
+* **Recall**: This term tell us about the sensitivity of prediction. It tell us about how much was the algorithm actually able to predict properly. In our case it is ratio of (actual fraud in predicted)/(total fraud in transactions) i.e. 3/6 = 1/2. Technically, it is ratio of true positives to all positive
+* **True Positive Rate**: When it is fraud, how often does the algorithm predict a transaction to be fraud. In our example, it is 3/6.
+* **False Negative Rate**: When it is not fraud, how often does the algorithm predict a transaction to be fraud. In our example, it is 1/13.
+* **Accuracy**: This tells us, how accurate our algorithm is. In our case it is (3+13)/20 = 80%.
+* **Misclassification Rate**: This is opposite of Accuracy i.e. missclass_rate = 1 - accuracy = 20%.
+* **Prevalance**: It tells us the whether our data is sparse or not for classification. In our example it is percentage of transaction that are fraud in dataset i.e. 6/20 = 30%.
+
+
+
 
 #### Common commands in Jekyll for Mac:
 1. bundle exec jekyll serve
